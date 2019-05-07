@@ -1,0 +1,71 @@
+<div class="container pagecontainer">
+    <div class="page-header">
+        <h1 style="color:white">{{ pgTitle }} Expense</h1>
+    </div>
+
+    <form [formGroup]="hospitalForm" (ngSubmit)="saveExpense(hospitalForm.value)" class="form-horizontal" novalidate autocomplete="off">
+        <div class="form-group" [ngClass]="{'has-error': hospitalForm.get('date').invalid && hospitalForm.get('date').dirty}">
+            <label for="dt" class="col-sm-2 control-label" style="color:white">birthdate</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                <input type="date" class="form-control" id="dt" [formControl]="birthdate" placeholder="yyyy-mm-dd">
+            </div>
+            <div class="text-danger" *ngIf="hospitalForm.get('date').dirty && hospitalForm.get('date').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="hospitalForm.get('date').errors.required">
+                    Please enter date
+                </span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="hospitalForm.get('date').errors.pattern">
+                    Please enter a valid date
+                </span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': hospitalForm.get('Gender').invalid && hospitalForm.get('Gender').dirty}">
+            <label for="Gender" class="col-sm-2 control-label" style="color:white">Gender</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></div>
+                <select class="form-control" [formControl]="Gender">
+                    <option></option>
+                    <option *ngFor="let a of acc" >{{a}}</option>
+                </select>
+            </div>
+            <div class="text-danger" *ngIf="hospitalForm.get('Gender').dirty && hospitalForm.get('Gender').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="hospitalForm.get('Gender').errors.required">
+                    Please select Gender
+                </span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': hospitalForm.get('age').invalid && hospitalForm.get('age').dirty}">
+            <label for="age" class="col-sm-2 control-label" style="color:white">age</label>
+            <div class="input-group col-sm-10">
+                <div class="input-group-addon">$</div>
+                <input type="number" class="form-control" id="age" [formControl]="age" placeholder="Enter age">
+            </div>
+            <div class="text-danger" *ngIf="hospitalForm.get('age').dirty && hospitalForm.get('age').errors">
+                <span class="col-sm-2"></span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="hospitalForm.get('age').errors.required">
+                    Please enter age
+                </span>
+                <span class="col-sm-10" style="padding:4px 0 0" *ngIf="hospitalForm.get('age').errors.pattern">
+                    Please enter a valid age
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Name" class="col-sm-2 control-label" style="color:white">Name</label>
+            <div class="input-group col-sm-10">
+                <textarea class="form-control" id="Name" rows="3" [formControl]="Name" placeholder="Name"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-10">
+                <button type="submit" [disabled]="hospitalForm.invalid" class="btn btn-primary">{{ btnLbl }}</button>
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="reset" class="btn btn-default" *ngIf="btnLbl == 'Update'" (click)="onBack()">Back</button>
+            </div>
+        </div>
+    </form>
+
+</div>
