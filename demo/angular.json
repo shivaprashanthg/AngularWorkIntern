@@ -10,7 +10,10 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "styles": [
+            "src/styles.scss",
+            "node_modules/ngx-toastr/toastr.scss"
+],
         }
       },
       "architect": {
@@ -28,8 +31,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/ngx-toastr/toastr.css",
-              "node_modules/bootstrap3/dist/css/bootstrap.min.css"
+              //"node_modules/ngx-toastr/toastr.scss",
+              //"node_modules/bootstrap3/dist/scss/bootstrap.min.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
