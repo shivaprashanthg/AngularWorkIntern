@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from 'src/app/shared1/order.service';
+import { OrderService } from 'src/app/layout/shared/order.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 

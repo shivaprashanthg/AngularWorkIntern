@@ -3,3 +3,16 @@
 <section class="main-container" [ngClass]="{collapsed: collapedSideBar}">
     <router-outlet></router-outlet>
 </section>
+
+<app-order></app-order>
+<div class="jumbotron jumbotron-fluid">
+    <h3 class="display-5 text-center h1-font"><img src="../assets/img/food.png" class="logo-img" width="15%" alt="logo">Cravings
+      Resto...</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>

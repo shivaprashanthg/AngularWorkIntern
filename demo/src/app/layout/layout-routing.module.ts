@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-import { OrdersComponent } from './layout/order-components/orders/orders.component';
-import { OrderComponent } from './layout/order-components/orders/order/order.component';
+import { OrdersComponent } from 'src/app/layout/order-components/orders/orders.component';
+import { OrderComponent } from 'src/app/layout/order-components/orders/order/order.component';
 
 const routes: Routes = [
     {
@@ -24,8 +25,9 @@ const routes: Routes = [
 
                { path: '', component: OrderComponent },
                { path: 'edit/:id', component: OrderComponent }
-            ]
-        }
+
+               ]
+            }
         ]
     }
 ];

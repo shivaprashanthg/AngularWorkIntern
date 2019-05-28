@@ -1,9 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { OrderItem } from 'src/app/shared1/order-item.model';
-import { ItemService } from 'src/app/shared1/item.service';
-import { Item } from 'src/app/shared1/item.model';
-import { OrderService } from 'src/app/shared1/order.service';
+import { OrderItem } from 'src/app/layout/shared/order-item.model';
+import { ItemService } from 'src/app/layout/shared/item.service';
+import { Item } from 'src/app/layout/shared/item.model';
+import { OrderService } from 'src/app/layout/shared/order.service';
 import { NgForm } from '@angular/forms';
 
 @Component({

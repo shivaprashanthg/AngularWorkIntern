@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from 'src/app/shared1/order.service';
+import { OrderService } from 'src/app/layout/shared/order.service';
 import { NgForm } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { OrderItemsComponent } from '../order-items/order-items.component';
-import { CustomerService } from 'src/app/shared1/customer.service';
-import { Customer } from 'src/app/shared1/customer.model';
+import { CustomerService } from 'src/app/layout/shared/customer.service';
+import { Customer } from 'src/app/layout/shared/customer.model';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 
